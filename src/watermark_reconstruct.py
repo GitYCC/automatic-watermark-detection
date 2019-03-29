@@ -167,7 +167,7 @@ def Func_Phi(X, epsilon=1e-3):
 def Func_Phi_deriv(X, epsilon=1e-3):
     return 0.5/Func_Phi(X, epsilon)
 
-def solve_images(J, W_m, alpha, W_init, gamma=1, beta=1, lambda_w=0.005, lambda_i=1, lambda_a=0.01, iters=4):
+def solve_images(J, W_m, alpha, W_init, gamma=1, beta=1, lambda_w=0.005, lambda_i=1, lambda_a=0.01, iters=1):
     '''
     Master solver, follows the algorithm given in the supplementary.
     W_init: Initial value of W
@@ -248,6 +248,7 @@ def solve_images(J, W_m, alpha, W_init, gamma=1, beta=1, lambda_w=0.005, lambda_
             plt.subplot(3,1,2); plt.imshow(PlotImage(Wk[i]))
             plt.subplot(3,1,3); plt.imshow(PlotImage(Ik[i]))
             plt.draw()
+            plt.savefig('test.png')
             plt.pause(0.001)
             print(i)
 
@@ -257,6 +258,7 @@ def solve_images(J, W_m, alpha, W_init, gamma=1, beta=1, lambda_w=0.005, lambda_
 
         plt.imshow(PlotImage(W))
         plt.draw()
+        plt.savefig('test.png')
         plt.pause(0.001)
         
         # Step 3
@@ -289,6 +291,7 @@ def solve_images(J, W_m, alpha, W_init, gamma=1, beta=1, lambda_w=0.005, lambda_
 
         plt.imshow(PlotImage(alpha))
         plt.draw()
+        plt.savefig('test.png')
         plt.pause(0.001)
     
     return (Wk, Ik, W, alpha)
