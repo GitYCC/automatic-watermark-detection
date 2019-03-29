@@ -1,0 +1,8 @@
+opencv-python==4.0.0.21
+bs4==0.0.1
+numpy==1.15.4
+matplotlib==2.2.2
+scipy==1.1.0
+jupyter==1.0.0
+tensorflow==1.8.0
+requests==2.21.0
